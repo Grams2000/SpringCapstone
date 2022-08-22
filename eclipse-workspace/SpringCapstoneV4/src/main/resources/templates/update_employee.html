@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Update Employee</title>
+</head>
+<body>
+
+<div class="container">
+<h1>Employee Management System</h1>
+<hr>
+<h2>Update Employee</h2>
+
+<form action="#" th:action="@{/saveEmployee}" th:object="${employee}" method="POST">
+	
+	<input type="hidden" th:field= "*{id}">
+	
+	<input type="text" th:field= "*{name}">
+	<input type="text" th:field= "*{email}">
+	<input type="text" th:field= "*{password}">
+	<button type="submit" class= "btn btn-info">Update Employee</button>
+	
+	</form>
+	
+	<hr>
+	
+	<a th:href = "@{/list}">Back to Employee List</a>
+
+
+</div>
+
+</body>
+</html>

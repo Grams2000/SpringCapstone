@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Tour Management System</title>
+</head>
+<body>
+<div class="container">
+
+<h1>
+Tour Management System
+</h1>
+
+<h2>Save Tour</h2>
+
+<form action ="#" th:action="@{/saveTour}" th:object="${tour}" method="POST">
+	<input type="text" th:field = "*{name}" placeholder = "Tour Name">
+	
+	<input type="date" th:field = "*{date}" placeholder = "Tour Date">
+	
+	<button type="submit"> Save tour</button>
+</form>
+</div>
+
+</body>
+</html>

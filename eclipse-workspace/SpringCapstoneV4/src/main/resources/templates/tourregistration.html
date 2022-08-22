@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Tour Registration</title>
+</head>
+<body>
+
+
+<div class="container">
+	<h1>Tour registration system</h1>
+	
+
+<form action ="#" th:action="@{/saveMemberToTour}" th:object="${tours}" method="POST">
+	<input type="text" th:field = "*{name}" placeholder = "Tour Name">
+	
+	<input type="date" th:field = "*{date}" placeholder = "Tour date">
+	
+	<input type="text" th:field = "*{member}" placeholder = "Member email">
+	
+	<button type="submit">Save Tour</button>
+</form>
+</div>
+</body>
+</html>

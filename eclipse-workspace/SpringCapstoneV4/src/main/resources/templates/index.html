@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Employee Home Page</title>
+</head>
+<body>
+<div align="center">
+<a th:href = "@{/showNewEmployeeForm}" class="btn btn-primary">Add employee</a>
+	<h1>Employees List</h1>
+	<table>
+	
+	<thead>
+	<tr>
+		<th>Name</th>
+		<th>Email</th>
+		<th>Password</th>
+		<th>Actions</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr th:each="Employee : ${listEmployees}">
+		<td th:text="${Employee.name}"></td>
+		<td th:text="${Employee.email}"></td>
+		<td th:text="${Employee.password}"></td>
+		<td><a th:href="@{/showFormForUpdate/{id}(id=${Employee.id})}" class="btn btn-primary">Update</a>
+			<a th:href="@{/deleteEmployee/{id}(id=${Employee.id})}" class="btn btn-danger">Delete</a>
+		</td>
+	</tr>
+	</tbody>
+	</table>
+	</div>
+	<br>
+	<br>
+<div align="center">
+	<a th:href = "@{/showNewTourForm}">Add Tours</a>
+	<h1>Tours List</h1>
+	<table>
+	
+	<thead>
+	<tr>
+		<th>Name</th>
+		<th>Date</th>
+		<th>Actions</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr th:each="Tours : ${listTours}">
+		<td th:text="${Tours.name}"></td>
+		<td th:text="${Tours.date}"></td>
+		<td><a th:href="@{/showFormForUpdateTour/{id}(id=${Tours.id})}" class="btn btn-primary">Update</a>
+			<a th:href="@{/deleteTour/{id}(id=${Tours.id})}" class="btn btn-danger">Delete</a>
+		</td>
+	</tr>
+	</tbody>
+	</table>
+	</div>
+	<br>
+	<br>
+	<div align="center">
+	<h1>Members List</h1>
+	<table>
+	
+	<thead>
+	<tr>
+		<th>Name</th>
+		<th>Email</th>
+		<th>Address</th>
+		<th>Membership Length (mo)</th>
+		
+	</tr>
+	</thead>
+	<tbody>
+	<tr th:each="Member : ${listMembers}">
+		<td th:text="${Member.name}"></td>
+		<td th:text="${Member.email}"></td>
+		<td th:text="${Member.address}"></td>
+		<td th:text="${Member.membership_length}"></td>
+	</tr>
+	</tbody>
+	</table>
+	</div>
+</body>
+</html>

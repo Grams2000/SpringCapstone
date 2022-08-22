@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Member Sign Up</title>
+        <style type="text/css">
+          body { background: beige !important; }
+       </style>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" th:href="@{/css/MemSignUp.css}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+        
+    </head>
+    <body>
+
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#" style="color: darkorange;">American Family Zoo</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" th:href="@{/Home}">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" th:href="@{/AboutUs}">About Us</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Exhibits
+                    </a>
+                    <ul class="dropdown-menu active">
+                      <li><a class="dropdown-item" th:href="@{/AfricanSavanna}">African Savanna</a></li>
+                      <li><a class="dropdown-item" th:href="@{/AmazonRainforest}">Amazon Rainforest</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" th:href="@{/MemSignUp}">Become a member!</a></li>
+                      <li><a class="dropdown-item" th:href="@{/list}">Employees Click Here!</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+        <h1>
+            Member Sign Up Form
+        </h1>
+
+        <form action ="#" th:action="@{/saveMember}" th:object="${member}" method="POST">
+        <div class="mb-2 mx-5" >
+            <label for="exampleFormControlInput1" class="form-label">Full Name</label>
+            <input type="text" th:field = "*{name}" class="form-control" placeholder="Full Name">
+          </div>
+          <div class="mb-2 mx-5" >
+            <label for="exampleFormControlInput1" class="form-label">Email</label>
+            <input type="email"  th:field = "*{email}" class="form-control" id="exampleFormControlInput1" placeholder="Email">
+          </div>
+          <div class="mb-2 mx-5" >
+            <label for="exampleFormControlInput1" class="form-label">Address</label>
+            <input type="text" th:field = "*{Address}" class="form-control" id="exampleFormControlInput1" placeholder="Address">
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" th:field = "*{membership_length}" th:value="6" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">
+              6-Month Membership
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" th:field = "*{membership_length}" th:value="12" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">
+              12-Month Membership
+            </label>
+            
+          </div>
+          <div class="buttonuno">
+          <input class="btn btn-primary align-items-center" type="submit" value="Submit">
+        </div>
+
+
+        </form>
+
+
+
+        
+        
+        
+        <script src="app.js" async defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Update Tour</title>
+</head>
+<body>
+<div class="container">
+<h1>Tour Management System</h1>
+<hr>
+<h2>Update Tour</h2>
+
+<form action="#" th:action="@{/saveTour}" th:object="${tour}" method="POST">
+	
+	<input type="hidden" th:field= "*{id}">
+	
+	<input type="text" th:field= "*{name}">
+	<input type="date" th:field= "*{date}">
+	<button type="submit" class= "btn btn-info">Update Tour</button>
+	
+	</form>
+	
+	<hr>
+	
+	<a th:href = "@{/list}">Back to Tour List</a>
+
+
+</div>
+</body>
+</html>
